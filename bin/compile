@@ -74,5 +74,6 @@ export PATH="$HOME/.heroku/kubectl/bin:$PATH"
 if [ ! -z "$KUBECONFIG" ]; then
     mkdir -p "$HOME/.kube"
     echo "${KUBECONFIG}" | base64 -d | gunzip > "$HOME/.kube/config"
+    unset KUBECONFIG
 fi
 PROFILE
